@@ -1,51 +1,78 @@
+#include <stdarg.h>
 #include "main.h"
-//#include <stdlib.h>
+#include <stddef.h>
 
 /**
   * _printf - Acts the same way as the printf function
-  *
   * @format: The conversion specifier to prints
-  *
   * Return: Returns all the characters printed
   */
-
 int _printf(const char *format, ...)
 {
-	va_list args;
+	int counter;
+	va_list arg;
+	const char *ptr;
 
-	f_idt form_types[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_char},
-		{NULL, NULL}
-	};
+	if (format == NULL)
+		return (-1);
+	va_start(arg, format);
 
-	unsigned int i = 0;
-	unsigned int j = 0;
-	int k;
-
-	va_start(args, format);
-
-	while (format != NULL && format[i])
+	for (ptr = format; *ptr ; ptr++)
 	{
-		j = 0;
-		while (j < 3)
+		if (*ptr == '%' && (*ptr + 1) == '%')
 		{
-			if (format[i] == '%')
-			{
-
-				if (format[i + 1] == *form_types[j].format)
-				{
-					k = form_types[j].f(args);
-				}
-			}
-			j++;
+			_putchar('%');
+			counter++;
+			continue;
 		}
-		i++;
+		else if (*ptr == '%' && (*ptr + 1) != '%')
+		{
+			counter += swtch_cs(arg, ptr);
+			ptr++;
+			continue;
+		}
+		else
+		{
+			if (ptr == NULL)
+				return (0);
+
+			_putchar(*ptr);
+			counter++;
+		}
 	}
+	va_end(arg);
+	return (counter);
+}
 
-	va_end(args);
-	_putchar('\n');
+/**
+  * swtch_cs - Switch cases with all the probable chances
+  * @arg: The list
+  * @ptr: The pointer that points to format
+  * Return: Returns the number of chars printed
+  */
+int swtch_cs(va_list arg, const char *ptr)
+{
+	int counter = 0;
 
-	return (k);
+	switch (*++ptr)
+	{
+	case 'c':
+		counter += print_char(arg);
+		break;
+	case 's':
+		counter += print_string(arg);
+		break;
+	case '%':
+		_putchar('%');
+		counter++;
+		break;
+	case '\0':
+		return (-1);
+
+	default:
+		_putchar('%');
+		_putchar(*ptr);
+		counter += 2;
+	}
+	return (counter);
 }
