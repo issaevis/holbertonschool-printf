@@ -9,70 +9,52 @@
   */
 int _printf(const char *format, ...)
 {
-	int counter;
-	va_list arg;
-	const char *ptr;
+	int counter = 0, i = 0, j;
+	va_list args;
+
+	f_dt form_types[] = {
+		{ "c", print_char},
+		{ "s", print_string},
+		{NULL, NULL}
+	};
 
 	if (format == NULL)
 		return (-1);
-	va_start(arg, format);
+	va_start(args, format);
 
-	for (ptr = format; *ptr ; ptr++)
+	while (format != NULL && format[i] != '\0')
 	{
-		if (*ptr == '%' && (*ptr + 1) == '%')
-		{
-			_putchar('%');
-			counter++;
-			continue;
-		}
-		else if (*ptr == '%' && (*ptr + 1) != '%')
-		{
-			counter += swtch_cs(arg, ptr);
-			ptr++;
-			continue;
-		}
-		else
-		{
-			if (ptr == NULL)
-				return (0);
+			if (format[i] == '%')
+			{
+				for (j = 0; form_types[j].form != NULL ; j++)
+				{
+					if (format[i + 1] == *form_types[j].form)
+					{
+						counter += form_types[j].f(args);
+						i++;
+					}
+				}
+				if (format[i + 1] == '%')
+				{
+					_putchar('%');
+					counter++;
+					i++;
+				}
+			}
+			else
+			{
+				if (format[i - 1] == '%' && format[i] != '%')
+				{
+					_putchar('%');
+					counter++;
+				}
+				_putchar(format[i]);
+				counter++;
+			}
+		i++;
 
-			_putchar(*ptr);
-			counter++;
-		}
 	}
-	va_end(arg);
-	return (counter);
-}
 
-/**
-  * swtch_cs - Switch cases with all the probable chances
-  * @arg: The list
-  * @ptr: The pointer that points to format
-  * Return: Returns the number of chars printed
-  */
-int swtch_cs(va_list arg, const char *ptr)
-{
-	int counter = 0;
-
-	switch (*++ptr)
-	{
-	case 'c':
-		counter += print_char(arg);
-		break;
-	case 's':
-		counter += print_string(arg);
-		break;
-	case '%':
-		_putchar('%');
-		counter++;
-		break;
-	case '\0':
-		return (-1);
-
-	default:
-		_putchar('%');
-		_putchar(*ptr);
-		counter += 2;
-	}
+	va_end(args);
 	return (counter);
 }
