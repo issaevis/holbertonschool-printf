@@ -36,7 +36,28 @@ _printf("Let's try printing a simple example.");
 To print integers:
 .br
 _printf("NOT POSITIVE:[%d]", -120997);
+
+The following example shows how to use the _printf() function to print a string and an integer to the standard output stream:
+
+    #include "main.h"
+    int main(void)
+    {
+        char *str = "Hello, world!";
+        int num = 42;
+
+        _printf("%s %d\n", str, num);
+
+        return (0);
+    }
+
+The output of the above code would be:
+
+    Hello, world! 42
+
+.SH RETURN VALUE
+The _printf() function returns the number of characters printed, excluding the null byte used to end output to strings. A negative value is returned if an error occurs.
 .SH SEE ALSO
+printf(3)
 _putchar
 .SH BUGS
 No known bugs.
