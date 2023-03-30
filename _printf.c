@@ -32,10 +32,10 @@ int _printf(const char *format, ...)
 			}
 			if (format[i + 1] == '%')
 				counter += _putchar('%');
-			else if (form_types[j].f == NULL && format[i + 1] != '%')
-				counter = _putchar(format[i]) + _putchar(format[i + 1]);
 			else if (format[i + 1] == '\0')
 				return (-1);
+			else if (form_types[j].f == NULL && format[i + 1] != '%')
+				counter = _putchar(format[i]) + _putchar(format[i + 1]);
 			i++;
 		}
 		else
