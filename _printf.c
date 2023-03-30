@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		{
 			for (j = 0; form_types[j].form != NULL ; j++)
 			{
-				if (format[i + 1] == *form_types[j].form)
+				if (format[i + 1] == form_types[j].form[0])
 				{
 					counter += form_types[j].f(args);
 					break;
