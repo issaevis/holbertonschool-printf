@@ -71,5 +71,5 @@ If you encounter a bug, or a problem, kindly let me know. This repository is ope
 
 ## Authors
 
-- [Akil Kambellari](https://github.com/akka97)
+- [Akil Kabellari](https://github.com/akka97)
 - [Evis Topollaj](https://github.com/issaevis)
