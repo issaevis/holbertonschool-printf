@@ -9,10 +9,11 @@ int _printf(const char *format, ...);
 
 int print_char(va_list list);
 int print_string(va_list list);
+int print_int(va_list list);
 
 /**
  * struct format_types - Struct format_types
- * @format: The conversion specifier
+ * @form: The conversion specifier
  * @f: The function pointer
  */
 
