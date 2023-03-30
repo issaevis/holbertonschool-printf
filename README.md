@@ -1,19 +1,22 @@
 # _printf
 The function **_printf** sends formatted output to stdout (standard output stream) by formatting the argument(s) passed in and converting the arguments(s) into a character string
 
-## Usage
+## Compilation
 To use the _printf function you need to clone the repository into your directory
 
 ```bash
 $ git@github.com:issaevis/holbertonschool-printf.git
 ```
 
-# Use in code
+## Examples
+
 ## How to use _printf in your code
 See the following example when _printf is implemented in your code:
 
 ```bash
-#include "main.h"
+## Testing
+
+The code is tested with various
 
 int main(void)
 {
