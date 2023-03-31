@@ -55,9 +55,9 @@ int p_int_rec(long int n, int count)
 	return (nr_digits);
 }
 /**
- * p_int - prints a int
- * @list: variadic list
- * Return: pintrec
+ * p_int - prints a int.
+ * @list: variadic list.
+ * Return: pintrec.
  */
 int p_int(va_list list)
 {
