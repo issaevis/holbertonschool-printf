@@ -61,7 +61,7 @@ This implementation of _printf() uses the following standard C libraries:
 - stddef.h: Defines several macros and types used in other standard library headers.
 - stdarg.h: Defines a variable argument list and the macros used to parse them.
 
-You must have a `C` compiler installed on your own machine. All tests are made on a `Ubuntu 20.04` using `gcc` as the compiler
+You must have a `C` compiler installed on your own machine. All tests are made on a `Ubuntu 20.04` using `gcc` as the compiler.
 
 ## Contributing
 
