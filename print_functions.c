@@ -35,7 +35,7 @@ int p_str(va_list list)
 /**
  * p_int_rec - print integer in recursion
  * @n: long int
- * @count: integer that wwill be counted
+ * @count: integer that will be counted
  * Return: number of digits
  */
 int p_int_rec(long int n, int count)
