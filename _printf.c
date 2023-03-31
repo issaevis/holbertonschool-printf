@@ -3,8 +3,8 @@
 #include <stdarg.h>
 /**
  * _printf - The same function as printf
- * @format: the conversion specifier to prints
- * Return: returns all the characters printed
+ * @format: The conversion specifier to prints
+ * Return: Returns all the characters printed
  */
 int _printf(const char *format, ...)
 {
