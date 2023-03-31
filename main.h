@@ -3,9 +3,9 @@
 
 #include <stdarg.h>
 /**
- * struct print - struct name
- * @f_type: type of format
- * @f: function
+ * struct Print - struct name
+ * @f_type: Type of format
+ * @f: Function
  */
 
 typedef struct print
