@@ -7,7 +7,7 @@ The _printf() function is defined in the printf.c file, and its associated helpe
 
 ## Compilation
 
-To compile the code on your own machine, kindly
+To compile the code on your own machine, kindly:
 
 - Clone the code from this repository using `git clone git@github.com:issaevis/holbertonschool-printf.git`
 - Compile the code using `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c -o printf`
