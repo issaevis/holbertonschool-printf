@@ -16,9 +16,9 @@ int p_char(va_list list)
 }
 
 /**
- * p_str - prints a string
- * @list: The variadic list
- * Return: Number of chars
+ * p_str - prints a string.
+ * @list: The variadic list.
+ * Return: Number of chars.
  */
 int p_str(va_list list)
 {
