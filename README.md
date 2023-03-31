@@ -69,7 +69,7 @@ The code is tested with various floating-point numbers, integers, strings, and c
 
 If you encounter a bug, or a problem, kindly let me know. This repository is open for contributions. If you would like to contribute, please create a pull request and follow the code style of the existing code.
 
-# Authors
+## Authors
 
 - [Akil Kabellari](https://github.com/akka97)
 - [Evis Topollaj](https://github.com/issaevis)
