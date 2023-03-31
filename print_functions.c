@@ -2,9 +2,9 @@
 #include <stdarg.h>
 #include <stdlib.h>
 /**
- * p_char - Prints a char
- * @list: The variadic list
- * Return: Number of chars
+ * p_char - Prints a char.
+ * @list: The variadic list.
+ * Return: Number of chars.
  */
 int p_char(va_list list)
 {
@@ -16,7 +16,7 @@ int p_char(va_list list)
 }
 
 /**
- * p_str - prints a string.
+ * p_str - Prints a string.
  * @list: The variadic list.
  * Return: Number of chars.
  */
@@ -33,10 +33,10 @@ int p_str(va_list list)
 	return (i);
 }
 /**
- * p_int_rec - print integer in recursion
- * @n: long int.
- * @count: integer that will be counted.
- * Return: number of digits.
+ * p_int_rec - Print integer in recursion.
+ * @n: Long int.
+ * @count: Integer that will be counted.
+ * Return: Number of digits.
  */
 int p_int_rec(long int n, int count)
 {
@@ -55,9 +55,9 @@ int p_int_rec(long int n, int count)
 	return (nr_digits);
 }
 /**
- * p_int - prints a int.
- * @list: variadic list.
- * Return: pintrec.
+ * p_int - Prints a int.
+ * @list: Variadic list.
+ * Return: p_int_rec.
  */
 int p_int(va_list list)
 {
