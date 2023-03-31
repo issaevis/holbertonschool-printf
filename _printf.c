@@ -2,9 +2,9 @@
 #include <stddef.h>
 #include <stdarg.h>
 /**
- * _printf - The same function as printf
- * @format: The conversion specifier to prints
- * Return: Returns all the characters printed
+ * _printf - The same function as printf.
+ * @format: The conversion specifier to prints.
+ * Return: Returns all the characters printed.
  */
 int _printf(const char *format, ...)
 {
